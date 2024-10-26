@@ -1,0 +1,37 @@
+AI-Demand-Forecasting-Logistics/
+│
+├── data/                        # Datasets
+│   ├── raw_data.csv             # Sample raw data
+│   ├── processed_data.csv       # Cleaned & transformed data
+│
+├── notebooks/                   # Jupyter Notebooks for EDA & Experiments
+│   ├── EDA.ipynb                
+│   ├── Model_Training.ipynb     
+│
+├── models/                      # Trained models
+│   ├── demand_forecast_model.pkl
+│   ├── scaler.pkl
+│
+├── src/                         # Core scripts for data & model management
+│   ├── data_preprocessing.py
+│   ├── train_model.py
+│   ├── evaluate_model.py
+│   ├── forecasting.py
+│   ├── utils.py
+│
+├── app/                         # Frontend & Backend Web App
+│   ├── app.py                   # Flask backend
+│   ├── templates/               # HTML files for the frontend
+│   │   ├── index.html           
+│   │   ├── forecast.html        
+│   ├── static/                  # CSS & JS for styling
+│       ├── styles.css
+│
+├── tests/                       # Unit tests
+│   ├── test_data_processing.py
+│   ├── test_model_training.py
+│
+├── Dockerfile                   # Docker configuration
+├── requirements.txt             # Python dependencies
+├── README.md                    # Documentation
+└── .gitignore                   # Ignore unnecessary files
