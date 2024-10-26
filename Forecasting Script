@@ -1,0 +1,9 @@
+import pickle
+import pandas as pd
+
+model = pickle.load(open('../models/demand_forecast_model.pkl', 'rb'))
+scaler = pickle.load(open('../models/scaler.pkl', 'rb'))
+
+def forecast(features):
+    scaled_features = scaler.transform([features])
+    return model.predict(scaled_features)[0]
