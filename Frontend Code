@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Demand Forecasting</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>AI Demand Forecasting</h1>
+    <form action="/forecast" method="POST">
+        <label for="feature1">Feature 1:</label>
+        <input type="text" name="feature1" required><br>
+
+        <label for="feature2">Feature 2:</label>
+        <input type="text" name="feature2" required><br>
+
+        <button type="submit">Forecast</button>
+    </form>
+</body>
+</html>
