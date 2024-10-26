@@ -1,0 +1,24 @@
+from flask import Flask, render_template, request, jsonify
+import pickle
+import pandas as pd
+
+# Load the trained model and scaler
+model = pickle.load(open('../models/demand_forecast_model.pkl', 'rb'))
+scaler = pickle.load(open('../models/scaler.pkl', 'rb'))
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/forecast', methods=['POST'])
+def forecast():
+    data = request.form
+    features = pd.DataFrame([data]).astype(float)
+    scaled_features = scaler.transform(features)
+    prediction = model.predict(scaled_features)[0]
+    return render_template('forecast.html', prediction=prediction)
+
+if __name__ == "__main__":
+    app.run(debug=True)
